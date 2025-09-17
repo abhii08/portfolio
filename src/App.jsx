@@ -1,7 +1,6 @@
 
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { HelmetProvider } from 'react-helmet-async';
 import { store } from './store';
 import { initializeTheme } from './store/slices/themeSlice';
 import { trackPageView } from './lib/supabase';
@@ -43,11 +42,9 @@ function AppContent() {
 
 function App() {
   return (
-    <HelmetProvider>
-      <Provider store={store}>
-        <AppContent />
-      </Provider>
-    </HelmetProvider>
+    <Provider store={store}>
+      <AppContent />
+    </Provider>
   );
 }
 
